@@ -1,0 +1,31 @@
+{
+  "name": "siteup",
+  "version": "1.0.0",
+  "description": "The Site Verification Tool is an open-source GitHub project that provides a comprehensive solution for verifying the availability and responsiveness of websites. Built using Node.js, MongoDB, and React, this project offers developers a powerful toolset to monitor the status of websites in real-time.",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PedroBSanchez/siteup.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PedroBSanchez/siteup/issues"
+  },
+  "homepage": "https://github.com/PedroBSanchez/siteup#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0"
+  },
+  "devDependencies": {
+    "mongoose": "^7.3.1"
+  }
+}
