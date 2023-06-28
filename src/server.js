@@ -11,6 +11,6 @@ app.use(express.json());
 
 app.use("/user", userController);
 
-const port = process.env.PORT || 8080;
+const port = process.env.SERVER_PORT || 8080;
 
 app.listen(port, () => console.log(`Server up on port ${port}`));

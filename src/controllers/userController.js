@@ -2,9 +2,8 @@ const express = require("express");
 const router = express.Router();
 const authMiddleware = require("../middleware/auth");
 const userRepository = require("../repositories/userRepository");
-const Bcrypt = require("bcrypt");
+const Bcrypt = require("bcryptjs");
 const generateToken = require("../middleware/generateToken");
-const { Router } = require("express");
 
 router.get("/", async (req, res) => {
   try {
@@ -58,3 +57,5 @@ router.post("/signup", async (req, res) => {
     return res.status(500).send(error);
   }
 });
+
+module.exports = router;

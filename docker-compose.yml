@@ -1,11 +1,41 @@
+version: "3"
+
 networks:
   siteup:
 
 services:
-  app:
+  api:
+    container_name: siteup_api
+    restart: always
     build: .
-    command: npm start
+    env_file:
+      - .env
     ports:
-      - "8080:8080"
-    volumes:
-      - .:/usr/app
+      - ${SERVER_PORT}:8080
+    environment:
+      - MONGODB_USERNAME=${MONGODB_USERNAME}
+      - MONGODB_PASSWORD=${MONGODB_PASSWORD}
+      - MONGODB_DATABASE_INIT=${MONGODB_DATABASE_INIT}
+      - MONGODB_HOSTNAME=${MONGODB_HOSTNAME}
+      - SERVER_PORT=${SERVER_PORT}
+    links:
+      - mongo
+    depends_on:
+      - mongo
+    networks:
+      - siteup
+
+  mongo:
+    container_name: siteup_mongo
+    image: mongo
+    env_file:
+      - .env
+    ports:
+      - "27017:27017"
+    logging:
+      driver: none
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=admin
+    networks:
+      - siteup

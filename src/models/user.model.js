@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const Bcrypt = require("bcrypt");
+const Bcrypt = require("bcryptjs");
 
 const UserSchema = new mongoose.Schema(
   {
@@ -22,4 +22,4 @@ UserSchema.pre("save", async function (next) {
 
 const userModel = mongoose.model("Users", UserSchema);
 
-module.exports = pessoaModel;
+module.exports = userModel;
