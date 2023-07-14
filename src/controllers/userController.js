@@ -93,11 +93,11 @@ router.post("/addurl", async (req, res) => {
   }
 });
 
-router.delete("/removeurl/:url", async (req, res) => {
+router.delete("/removeurl", async (req, res) => {
   try {
     authMiddleware(req, res);
     if (req.userId) {
-      const url = req.params.url;
+      const url = req.body.url;
 
       if (userValidation.addUrlValidation(url).error) {
         return res.status(400).send({ error: "Invalid URL" });
