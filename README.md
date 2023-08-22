@@ -28,7 +28,7 @@ The objective of this project is to develop a user-friendly platform that enable
    
 ### Docker
  - set env variables (_env example)
- - run docker-compose up --build
+ - run "docker-compose up --build"
 
 # Preview
 
